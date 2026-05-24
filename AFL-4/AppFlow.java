@@ -720,6 +720,8 @@ private void cariProduk() {
             System.out.println("3. Lihat Pesanan");
             System.out.println("4. Lihat Negosiasi");
             System.out.println("5. Lihat Suggestion");
+            System.out.println("6. Lihat laporan penjualan");
+             System.out.println("7. Lihat Suggestion");
             System.out.print("Pilihan: ");
             int pilihan = s.nextInt();
             switch (pilihan) {
@@ -905,6 +907,9 @@ private void cariProduk() {
                 case 5:
                     prosesSuggestion();
                     break;
+                case 6:laporanpenjualan();
+                    break;
+                case 7:
                 default:
                     System.out.println("Tidak ada dalam pilihan");
             }
@@ -943,6 +948,14 @@ private void cariProduk() {
                 System.out.println("Pilihan tidak valid!");
         }
     }
+    public void laporanpenjualan(){
+        System.out.println("===laporan hasil penjualan");
+        if (transaksiList.isEmpty()) {
+        System.out.println("Belum ada transaksi penjualan.");
+        return;
+    }
+    int i = 1
+        double
     public void menuAdmin() {
         int pilih;
         do {
