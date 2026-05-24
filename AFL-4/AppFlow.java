@@ -720,6 +720,8 @@ private void cariProduk() {
             System.out.println("3. Lihat Pesanan");
             System.out.println("4. Lihat Negosiasi");
             System.out.println("5. Lihat Suggestion");
+            System.out.println("6. Lihat hasil pejualan");
+            System.out.println("7. Lihat Suggestion");
             System.out.print("Pilihan: ");
             int pilihan = s.nextInt();
             switch (pilihan) {
