@@ -910,6 +910,9 @@ private void cariProduk() {
                 case 6:
                     laporanPenjualan()
                     break;
+                case 7:
+                    laporkanuser()
+                    break;
                 default:
                     System.out.println("Tidak ada dalam pilihan");
             }
