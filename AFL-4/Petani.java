@@ -343,3 +343,5 @@ System.out.println("=== Laporan Hasil Penjualan ===");
     System.out.println("Total Pendapatan: Rp " + totalPendapatan);
     System.out.println("===============================");
 }
+public void SistemLapor
+    System.out.println("=== Sistem Lapor ===")
