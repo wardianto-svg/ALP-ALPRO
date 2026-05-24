@@ -720,6 +720,8 @@ private void cariProduk() {
             System.out.println("3. Lihat Pesanan");
             System.out.println("4. Lihat Negosiasi");
             System.out.println("5. Lihat Suggestion");
+            System.out.println("6. Lihat data penjaulan");
+            System.out.println("7. Laporan");
             System.out.print("Pilihan: ");
             int pilihan = s.nextInt();
             switch (pilihan) {
@@ -905,6 +907,11 @@ private void cariProduk() {
                 case 5:
                     prosesSuggestion();
                     break;
+                case 6:
+                    laporanpenjualan();
+                    break;
+                case 7:
+                    report();
                 default:
                     System.out.println("Tidak ada dalam pilihan");
             }
@@ -943,6 +950,24 @@ private void cariProduk() {
                 System.out.println("Pilihan tidak valid!");
         }
     }
+    public void Laporanpenjualan(){
+        System.out.println("=== Laporan Penjualan===");
+        if (transaksiList.isEmpty()){
+            System.out.println("Belum ada transaksi penjualan.");
+        return;
+    }
+        int i = 1
+            double totalPendapatan = 0;
+        for (Transaksi t : transaksiList) {
+        System.out.println(i + ". Produk: " + t.getProduk().getNama()
+                           + " | Jumlah: " + t.getJumlah()
+                           + " | Harga: " + t.getProduk().getHarga()
+                           + " | Total: " + t.getTotal());
+        totalPendapatan += t.getTotal();
+        i++;
+    }
+         System.out.println("Total Pendapatan: Rp " + totalPendapatan);
+}
     public void menuAdmin() {
         int pilih;
         do {
