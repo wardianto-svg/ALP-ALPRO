@@ -320,3 +320,26 @@ public class Petani extends User {
         return suggestionList;
     }
 }
+
+public void LapororanPenjualan(){
+System.out.println("=== Laporan Hasil Penjualan ===");
+    int totalPendapatan = 0;
+    int totalProdukTerjual = 0;
+
+    for (ItemKeranjang item : pesanan) {
+        Produk produk = item.getProduk();
+        int jumlah = item.getKuantitas();
+        int subtotal = item.hitungTotal();
+    System.out.println("Produk: " + produk.getNama());
+        System.out.println("Jumlah Terjual: " + jumlah);
+        System.out.println("Subtotal: Rp " + subtotal);
+        System.out.println("-----------------------------");
+
+        totalPendapatan += subtotal;
+        totalProdukTerjual += jumlah;
+    }
+
+    System.out.println("Total Produk Terjual: " + totalProdukTerjual);
+    System.out.println("Total Pendapatan: Rp " + totalPendapatan);
+    System.out.println("===============================");
+}
