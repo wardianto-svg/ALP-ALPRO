@@ -945,6 +945,31 @@ private void cariProduk() {
                 System.out.println("Pilihan tidak valid!");
         }
     }
+    public void laporanPenjualan() {
+    System.out.println("=== LAPORAN HASIL PENJUALAN ===");
+    int totalPendapatan = 0;
+    int totalProdukTerjual = 0;
+
+    if (pesanan.isEmpty()) {
+        System.out.println("Belum ada penjualan.");
+        return;
+    }
+
+    for (ItemKeranjang item : pesanan) {
+        if (item.getStatusPesanan() == StatusPesanan.FINISHED) {
+            Produk produk = item.getProduk();
+            int jumlah = item.getKuantitas();
+            int subtotal = item.hitungTotal();
+
+            System.out.println("Produk: " + produk.getNama());
+            System.out.println("Jumlah Terjual: " + jumlah);
+            System.out.println("Subtotal: Rp " + subtotal);
+            System.out.println("-----------------------------");
+
+            totalPendapatan += subtotal;
+            totalProdukTerjual += jumlah;
+        }
+    }
     public void menuAdmin() {
         int pilih;
         do {
