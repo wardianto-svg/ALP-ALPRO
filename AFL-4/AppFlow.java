@@ -976,6 +976,38 @@ private void cariProduk() {
             totalProdukTerjual += jumlah;
         }
     }
+        public void laporkanuser() {
+        System.out.println("=== LAPORKAN USER ===");
+        ArrayList<User> daftarUser = new ArrayList<>();
+        int no = 1;
+
+        for (User u : userList) {
+            if (u != currentUserPetani) {
+                daftarUser.add(u);
+                System.out.println(no++ + ". " + u.getNama());
+            }
+        }
+
+        if (daftarUser.isEmpty()) {
+            System.out.println("Tidak ada user lain!");
+            return;
+        }
+
+        System.out.print("Pilih User: ");
+        int pilihUser = s.nextInt() - 1;
+        s.nextLine();
+
+        if (pilihUser < 0 || pilihUser >= daftarUser.size()) {
+            System.out.println("Pilihan tidak valid!");
+            return;
+        }
+
+        User user = daftarUser.get(pilihUser);
+
+        System.out.print("Alasan Laporan: ");
+        String alasan = s.nextLine();
+
+        currentUserPetani.laporkanUser(user, alasan);
     public void menuAdmin() {
         int pilih;
         do {
